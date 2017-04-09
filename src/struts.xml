@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+<package name="osrs" extends="struts-default" namespace="/">
+
+	<action name="getInputForm" class="com.osrs.action.RegistrationAction" method="getInputForm">
+		 <result name="success">Registration.jsp</result>
+		 <result name="input">Registration.jsp</result>
+	</action>
+	<action name="register_user" class="com.osrs.action.RegistrationAction" method="doRegister">
+		<result name="success">Registration.jsp</result>
+		<result name="input">Registration.jsp</result>
+	</action>
+		
+		
+		
+	<action name="getSigninForm" class="com.osrs.action.LoginAction" method="getInputForm">
+		<result name="success">Signin.jsp</result>
+	</action>
+	<action name="user_signin" class="com.osrs.action.LoginAction" method="doSignin">
+		<result name="success">${UrlToRedirect}</result>
+		<result name="error">Signin.jsp</result>
+	</action>
+	
+	
+	
+	<action name="Signout" class="com.osrs.action.LogoutAction" method="doSignOut">
+		<result name="success">default.jsp</result>
+		<result name="error">default.jsp</result>
+	</action>
+	
+	
+		
+	<!-- MANAGE SHIP -->	
+	<action name="addShip" class="com.osrs.action.ShipAction" method="getInputForm">
+		<result name="success">Addshipdetails.jsp</result>
+	</action>
+	<action name="add_shipdetails" class="com.osrs.action.ShipAction" method="addShip">
+		<result name="success">Addshipdetails.jsp</result>
+		<result name="input">Addshipdetails.jsp</result>
+	</action>
+	
+	<!--Modifying Ship  -->
+	<action name="admin_modify_ship" class="com.osrs.action.ShipAction" method="getShipIdList">
+		 <result name="success">ModifyShip.jsp</result>
+		 <result name="input">ModifyShip.jsp</result>
+	</action> 
+	<action name="get_ship_modi" class="com.osrs.action.ShipAction" method="getShip">
+		 <result name="success">ModifyShip.jsp</result>
+		 <result name="input">ModifyShip.jsp</result>
+	</action> 
+	<action name="modify_ship" class="com.osrs.action.ShipAction" method="modifyShip">
+		<result name="success">ModifyShip.jsp</result>
+		<result name="input">ModifyShip.jsp</result>
+	</action>
+	
+	<!-- Deleting Ship  -->
+	<action name="admin_delete_ship" class="com.osrs.action.ShipAction" method="getShipIdList">
+		 <result name="success">DeleteShip.jsp</result>
+		 <result name="input">DeleteShip.jsp</result>
+	</action> 
+	<action name="get_ship_del" class="com.osrs.action.ShipAction" method="getShip">
+		 <result name="success">DeleteShip.jsp</result>
+		 <result name="input">DeleteShip.jsp</result>
+	</action> 
+	<action name="delete_ship" class="com.osrs.action.ShipAction" method="deleteShip">
+		<result name="success">DeleteShip.jsp</result>
+		<result name="input">DeleteShip.jsp</result>
+	</action>
+	
+	
+	<!-- MANAGE ROUTE -->
+	<action name="addRoute" class="com.osrs.action.RouteAction" method="getInputForm">
+		<result name="success">AddRoute.jsp</result>
+	</action>
+	<action name="add_route" class="com.osrs.action.RouteAction" method="addRoute">
+		<result name="success">AddRoute.jsp</result>
+		<result name="input">AddRoute.jsp</result>
+	</action>
+	
+	<!--Modifying Route  -->
+	<action name="admin_modify_route" class="com.osrs.action.RouteAction" method="getRouteIdList">
+		 <result name="success">ModifyRoute.jsp</result>
+		 <result name="input">ModifyRoute.jsp</result>
+	</action> 
+	<action name="get_route" class="com.osrs.action.RouteAction" method="getRoute">
+		 <result name="success">ModifyRoute.jsp</result>
+		 <result name="input">ModifyRoute.jsp</result>
+	</action> 
+	<action name="modify_route" class="com.osrs.action.RouteAction" method="modifyRoute">
+		<result name="success">ModifyRoute.jsp</result>
+		<result name="input">ModifyRoute.jsp</result>
+	</action>
+	
+	<!-- Deleting Route  -->
+	<action name="admin_delete_route" class="com.osrs.action.RouteAction" method="getRouteIdList">
+		 <result name="success">DeleteRoute.jsp</result>
+		 <result name="input">DeleteRoute.jsp</result>
+	</action> 
+	<action name="get_route_del" class="com.osrs.action.RouteAction" method="getRoute">
+		 <result name="success">DeleteRoute.jsp</result>
+		 <result name="input">DeleteRoute.jsp</result>
+	</action> 
+	<action name="delete_ship" class="com.osrs.action.RouteAction" method="deleteShip">
+		<result name="success">DeleteRoute.jsp</result>
+		<result name="input">DeleteRoute.jsp</result>
+	</action>
+	
+	
+	<!--MANAGE SCHEDULE -->
+	<action name="admin_add_schedule" class="com.osrs.action.ScheduleAction" method="getInputForm">
+		 <result name="success">AddSchedule.jsp</result> 
+	</action> 
+	<action name="add_schedule" class="com.osrs.action.ScheduleAction" method="addSchedule">
+		<result name="success">AddSchedule.jsp</result>
+		<result name="input">AddSchedule.jsp</result>
+	</action>
+	
+	<!--Modifying Schedule  -->
+	<action name="admin_modify_schedule" class="com.osrs.action.ScheduleAction" method="getScheduleIdList">
+		 <result name="success">ModifySchedule.jsp</result>
+		 <result name="input">ModifySchedule.jsp</result>
+	</action> 
+	<action name="get_schedule" class="com.osrs.action.ScheduleAction" method="getSchedule">
+		 <result name="success">ModifySchedule.jsp</result>
+		 <result name="input">ModifySchedule.jsp</result>
+	</action> 
+	<action name="modify_schedule" class="com.osrs.action.ScheduleAction" method="modifySchedule">
+		<result name="success">ModifySchedule.jsp</result>
+		<result name="input">ModifySchedule.jsp</result>
+	</action>
+	
+	<!-- Deleting Schedule -->
+	<action name="admin_delete_schedule" class="com.osrs.action.ScheduleAction" method="getScheduleIdList">
+		 <result name="success">DeleteSchedule.jsp</result>
+		 <result name="input">DeleteSchedule.jsp</result>
+	</action> 
+	<action name="get_schedule_del" class="com.osrs.action.ScheduleAction" method="getSchedule">
+		 <result name="success">DeleteSchedule.jsp</result>
+		 <result name="input">DeleteSchedule.jsp</result>
+	</action> 
+	<action name="delete_schedule" class="com.osrs.action.ScheduleAction" method="deleteSchedule">
+		<result name="success">DeleteSchedule.jsp</result>
+		<result name="input">DeleteSchedule.jsp</result>
+	</action>
+	
+	
+	<!-- USER VIEW SHIP DETAILS -->
+	<action name="view_ship" class="com.osrs.action.ShipAction" method="getShipIdList">
+		 <result name="success">ViewShipDetails.jsp</result>
+		 <result name="input">ViewShipDetails.jsp</result>
+	</action> 
+	<action name="get_ship" class="com.osrs.action.ShipAction" method="getShip">
+		 <result name="success">ViewShipDetails.jsp</result>
+		 <result name="input">ViewShipDetails.jsp</result>
+	</action> 
+	
+	
+	<!-- RESERVATION -->
+	<action name="reserve_ticket" class="com.osrs.action.ReservationAction" method="getInputForm">
+		 <result name="success">ReservationForm.jsp</result>
+		 <result name="input">ReservationForm.jsp</result>
+	</action>
+	<action name="reservation" class="com.osrs.action.ReservationAction" method="reservationCon">
+		<result name="success">ReservationConfirm.jsp</result>
+		<result name="input">ReservationConfirm.jsp</result>
+	</action>
+	
+	<action name="reservationConfirm" class="com.osrs.action.ReservationAction" method="getTransaction">
+		<result name="success">PaymentGateway.jsp</result>
+		<result name="input">PaymentGateway.jsp</result>
+	</action>
+	
+	<!-- PAYMENT -->
+	<action name="payment_gateway" class="com.osrs.action.TransactionAction" method="getInputForm">
+		<result name="success">OnlineTransaction.jsp</result>
+		<result name="input">OnlineTransaction.jsp</result>
+	</action>
+	
+	<action name="dopayment" class="com.osrs.action.TransactionAction, com.osrs.action.ReservationAction" method="doPayment,doReserve">
+		<result name="success">OnlineTransaction.jsp</result>
+		<result name="input">OnlineTransaction.jsp</result>
+	</action>
+	
+	<!-- CANCEL RESERVATION -->
+	<action name="cancel_ticket" class="com.osrs.action.ReservationAction" method="getReservationIdList">
+		 <result name="success">CancelReservation.jsp</result>
+		 <result name="input">CancelReservation.jsp</result>
+	</action> 
+	<action name="cancelReserve" class="com.osrs.action.ReservationAction" method="getReservation">
+		 <result name="success">CancelReservation.jsp</result>
+		 <result name="input">CancelReservation.jsp</result>
+	</action> 
+	<action name="delete_ticket" class="com.osrs.action.ReservationAction" method="cancelReservation">
+		<result name="success">CancelReservation.jsp</result>
+		<result name="input">CancelReservation.jsp</result>
+	</action>
+	
+	<!-- VIEW TICKET -->
+	<action name="view_ticket" class="com.osrs.action.ReservationAction" method="getReservationIdList">
+		 <result name="success">ViewMyTicket.jsp</result>
+		 <result name="input">ViewMyTicket.jsp</result>
+	</action> 
+	<action name="viewReserve" class="com.osrs.action.ReservationAction" method="getReservation">
+		 <result name="success">ViewMyTicket.jsp</result>
+		 <result name="input">ViewMyTicket.jsp</result>
+	</action> 
+	
+</package>
+
+</struts>
